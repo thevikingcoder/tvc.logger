@@ -1,0 +1,47 @@
+{
+  "name": "tvc.logger",
+  "version": "1.1.0",
+  "description": "Logging utility for the MEAN stack, logs out to console, file or MongoDB using mongoose.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thevikingcoder/tvc.logger.git"
+  },
+  "keywords": [
+    "MEAN",
+    "MongoDB",
+    "Mongoose",
+    "NodeJS",
+    "Log",
+    "Logger",
+    "Logging"
+  ],
+  "author": {
+    "name": "Bill Brady",
+    "email": "bill@thevikingcoder.com",
+    "url": "htttp://thevikingcoder.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thevikingcoder/tvc.logger/issues"
+  },
+  "homepage": "https://github.com/thevikingcoder/tvc.logger#readme",
+  "_id": "tvc.logger@1.1.0",
+  "_from": "tvc.logger@*",
+  "_npmVersion": "2.13.1",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "name": "Bill Brady",
+    "email": "bill@thevikingcoder.com"
+  },
+  "directories": {},
+  "dependencies": {
+    "jsonfile": "^2.2.1",
+    "lodash": "^3.10.0",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.10.3"
+  }
+}
