@@ -21,6 +21,7 @@ var defaultVars = {
     "logModel": "tvc.logs.prime",
     "tsFormat": "YYYY-MM-DD HH:mm:ss.SSS"
 };
+var logModel;
 
 /**
  * @returns {string} - Formatted timestamp
@@ -48,8 +49,10 @@ exports.config = function(opts) {
  */
 
 exports.write = function(doc) {
-    var model = require("./models/log")(defaultVars.logModel).Prime,
-        logNew = new model(doc);
+    if (logModel === undefined) {
+        logModel = mgCon();
+    }
+    var logNew = new logModel.Prime(doc);
 
     logNew.save(function(err) {
         if(err) {
@@ -57,3 +60,7 @@ exports.write = function(doc) {
         }
     });
 };
+
+function mgCon() {
+    return require("./models/log")(defaultVars.logModel);
+}
