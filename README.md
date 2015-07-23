@@ -3,15 +3,37 @@ Logging utility for the MEAN stack, logs out to console, file or MongoDB using m
 
 ## What is this repository for? ##
 * Logging of any event through simple methods
-* Current Version : 1.1.0
+* Current Version : 1.2.0
 
 ## Installation ##
 ```
 $ npm install tvc.logger
 ```
 
+## Usage ##
+
+```js
+// Require the module
+var log = require("tvc.logger");
+```
+
+**Update v1.2.0**
+
+Added OOP method
+
+```js
+var logger = require("tvc.logger");
+var log = new logger();
+var log2 = new logger();
+
+// Gets independent configuration options
+log.config({"tsFormat": "HH:mm:ss.SSS"});
+log2.config({"tsFormat": "MM-DD HH:mm:ss"});
+```
+
 ## Logging Methods ##
 ```js
+
 /**
  * Standard log message
  * @param _message {string|object} - Log message (will stringify objects)
@@ -30,6 +52,28 @@ log.info(_message, _function, _console, _status);
  * @param _status {number=} - HTTP status code
  */
 log.custom(_type, _message, _function, _console, _status);
+```
+
+### File Logging ###
+File logging will attempt to create a directory to contain log files and will name files using MomentJS notation.
+
+```js
+// Basic
+log.config({"toFile": true});
+// CSV
+log.config({"toFile": true, "logFormat": "csv"});
+// TSV
+log.config({"toFile": true, "logFormat": "csv", "extension": "tsv", "logSeparator": "\t"});
+// JSON
+log.config({"toFile": true, "logFormat": "json"});
+```
+
+### DB Logging ###
+```js
+// Default model name of 'tvc.logs.prime'
+log.config({"toMongo": true});
+// Change the model name to anything you'd like
+log.config({"toMongo": true, "logModel": "my.log"});
 ```
 
 ## Configuration ##
@@ -60,33 +104,12 @@ To use database logging, an active mongoose connection must be established
 | toMongo | boolean | false | To write log entries to database | true : false |
 | logModel | string | "tvc.logs.prime" | Collection name | :any |
 
-## Usage ##
-
-```js
-// Require the module
-var log = require("tvc.logger");
-```
-
-### File Logging ###
-File logging will attempt to create a directory to contain log files and will name files using MomentJS notation.
-
-```js
-// Basic
-log.config({"toFile": true});
-// CSV
-log.config({"toFile": true, "logFormat": "csv"});
-// TSV
-log.config({"toFile": true, "logFormat": "csv", "extension": "tsv", "logSeparator": "\t"});
-// JSON
-log.config({"toFile": true, "logFormat": "json"});
-```
-
 ## Examples ##
 ```js
 log.debug('Debug message');
 // 2015-07-19 15:07:14.569 - DEBUG    - Debug Message
 log.info("Info message");
-// 2015-07-19 15:07:14.567 - INFO     - App Initiated
+// 2015-07-19 15:07:14.567 - INFO     - Info Message
 log.warning('Warning message');
 // 2015-07-19 15:07:14.570 - WARNING  - Warning message
 log.error('Error message');

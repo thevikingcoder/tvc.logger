@@ -17,7 +17,6 @@ var mkdirp = require('mkdirp');
 var fs = require('fs');
 var moment = require('moment');
 var jf = require('jsonfile');
-var q = require('q');
 var _ = require('lodash');
 
 exports = module.exports = {};
