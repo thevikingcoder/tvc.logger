@@ -163,7 +163,7 @@ function doLog(_type, _message, _function, _console, _status) {
         }
     }
     if (defaultVars.toMongo)
-        defaultVars.mongoLog.write(msg);
+        defaultVars.mongoLog.write({"type": _type, "status_code": _status, "function": _function, "message": _message});
     if (defaultVars.toFile)
         defaultVars.fileLog.write(msg);
     if (_console)
