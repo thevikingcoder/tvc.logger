@@ -22,7 +22,7 @@ var log = require("tvc.logger");
 Added OOP method
 
 ```js
-var logger = require("tvc.logger");
+var logger = require("tvc.logger/oop");
 var log = new logger();
 var log2 = new logger();
 
