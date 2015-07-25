@@ -3,7 +3,7 @@ Logging utility for the MEAN stack, logs out to console, file or MongoDB using m
 
 ## What is this repository for? ##
 * Logging of any event through simple methods
-* Current Version : 1.2.1
+* Current Version : 1.2.3
 
 ## Installation ##
 ```
