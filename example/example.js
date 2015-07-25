@@ -1,6 +1,6 @@
 /*!
  * @projectName: tvc.logger
- * @version: 1.2.0
+ * @version: 1.2.2
  * @author: Bill Brady <bill@thevikingcoder.com>
  * @file: tvc.logger/example.js
  * @date: 7/23/15
