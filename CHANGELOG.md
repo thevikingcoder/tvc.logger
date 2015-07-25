@@ -29,3 +29,8 @@ This project adheres to [Semantic Versioning](http://semver.org).
 
 ### Fixed
 - MongoDB logging
+
+[unreleased]: https://github.com/thevikingcoder/tvc.logger/tree/dev
+[1.2.3]: https://github.com/thevikingcoder/tvc.logger/tree/dev
+[1.2.1]: https://github.com/thevikingcoder/tvc.logger/commit/0dbacd238328403d343ee00aa992120896a8f120
+[1.2.0]: https://github.com/thevikingcoder/tvc.logger
